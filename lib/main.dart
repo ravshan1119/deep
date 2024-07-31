@@ -14,17 +14,24 @@ final router = GoRouter(
       builder: (_, __) => Home(),
       routes: [
         GoRoute(
-          path: 'details',
-          builder: (_, __) => Scaffold(
-            appBar: AppBar(title: const Text('Details Screen')),
-          ),
-        ),
-        GoRoute(
-          path: 'data',
-          builder: (_, __) => Scaffold(
-            appBar: AppBar(title: const Text('Data Screen')),
-          ),
-        ),
+            path: 'details',
+            builder: (_, __) => Scaffold(
+                  appBar: AppBar(title: const Text('Details Screen urta')),
+                ),
+            routes: [
+              GoRoute(
+                  path: 'data',
+                  builder: (_, __) => Scaffold(
+                        appBar: AppBar(title: const Text('Data Screen ohiri')),
+                      ),
+                  routes: [
+                    GoRoute(
+                      path: 'data2/:id',
+                      builder: (_, __) => FruitsPage(
+                          id: int.parse(__.pathParameters['id'] ?? '1')),
+                    ),
+                  ]),
+            ]),
       ],
     ),
     // GoRoute(
@@ -38,21 +45,21 @@ final router = GoRouter(
     //             Detail1(id: int.parse(__.pathParameters['id']!)),
     //       ),
     //     ]),
-    GoRoute(
-      path: '/fruits',
-      builder: (context, state) {
-        return FruitsPage();
-      },
-      routes: <RouteBase>[
-        // Add child routes
-        GoRoute(
-          path:
-              'fruits-details', // NOTE: Don't need to specify "/" character for router’s parents
-          builder: (context, state) {
-            return Detail1();
-          },
-        ),
-      ],
-    )
+    // GoRoute(
+    //   path: '/fruits',
+    //   builder: (context, state) {
+    //     return FruitsPage();
+    //   },
+    //   routes: <RouteBase>[
+    //     // Add child routes
+    //     GoRoute(
+    //       path:
+    //           'fruits-details', // NOTE: Don't need to specify "/" character for router’s parents
+    //       builder: (context, state) {
+    //         return Detail1();
+    //       },
+    //     ),
+    //   ],
+    // )
   ],
 );

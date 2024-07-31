@@ -27,12 +27,11 @@ class _HomeState extends State<Home> {
             ),
             ElevatedButton(
                 onPressed: () {
-                  GoRouter.of(context).go(
-                      '/fruits/${controller.text}/details1/${controller.text}');
+                  GoRouter.of(context).go('/details/data/data2/${controller.text}');
                 },
                 child: Text("button")),
             ElevatedButton(
-                onPressed: () => context.goNamed('/fruits'),
+                onPressed: () {},
                 child: Text("button2")),
           ],
         ),

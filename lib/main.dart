@@ -1,5 +1,4 @@
 import 'package:deep/FruitsPage.dart';
-import 'package:deep/detail1.dart';
 import 'package:deep/home.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
